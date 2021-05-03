@@ -30,3 +30,27 @@ public:
         return index + 1;
     }
 };
+
+//方法二
+#if 0
+class Solution {
+public:
+    /**
+     * @param A: a list of integers
+     * @return : return an integer
+     */
+    int removeDuplicates(vector<int> &nums) {
+        // write your code here
+        if(nums.size() <= 2) 
+            return nums.size();
+        
+        int index = 2;
+        for(int i = 2; i < nums.size(); i++)
+        {
+            if(nums[i] != nums[index-2])
+                nums[index++] = nums[i];
+        }
+        return index;
+    }
+};
+#endif
